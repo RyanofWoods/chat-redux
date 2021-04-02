@@ -1,6 +1,5 @@
 body {
   font-family: Helvetica;
-  color: white;
   background-color: #fff;
 }
 .app {
@@ -14,6 +13,10 @@ body {
   .channel-list {
     width: 20%;
     background-color: #eee;
+
+    li {
+      cursor: pointer;
+    }
   }
   .message-list {
     width: 70%;
