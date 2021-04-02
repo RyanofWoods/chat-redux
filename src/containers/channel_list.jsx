@@ -4,16 +4,12 @@ import { connect } from 'react-redux';
 import Channel from './channel';
 
 class ChannelList extends Component {
-  shouldComponentUpdate() {
-    return false;
-  }
-
   render () {
     return (
       <ul className="channel-list">
         {
           this.props.channels.map((channel) => {
-            return (<Channel channel={channel} />);
+            return (<Channel key={channel} channel={channel} />);
           })
         }
       </ul>

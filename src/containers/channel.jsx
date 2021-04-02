@@ -10,9 +10,10 @@ class Channel extends Component {
   }
 
   render() {
+    const { channel } = this.props;
     return (
       <li onClick={this.handleClick} >
-        #{this.props.channel}
+        #{channel}
       </li>
     );
   }
