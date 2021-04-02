@@ -1,4 +1,4 @@
-export const SELECT_CHANNEL = 'SELECT_CHANNEL';
+import { SELECT_CHANNEL } from '../actions/index';
 
 const selectedChannelReducer = (state, action) => {
   if (state === undefined) {
