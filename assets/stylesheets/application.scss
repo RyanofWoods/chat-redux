@@ -1,7 +1,22 @@
 body {
   font-family: Helvetica;
+  color: white;
+  background-color: #fff;
 }
 .app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  height: 100vh;
+
+  .nav-bar {
+    width: 10%;
+    background-color: #ccc;
+  }
+  .channel-list {
+    width: 20%;
+    background-color: #eee;
+  }
+  .message-list {
+    width: 70%;
+    background-color: #fff;
+  }
 }
