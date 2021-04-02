@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Channel from './channel';
 
 class ChannelList extends Component {
-  render () {
+  render() {
     return (
       <ul className="channel-list">
         {
