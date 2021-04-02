@@ -12,7 +12,7 @@ class Channel extends Component {
   render() {
     const { channel } = this.props;
     return (
-      <li onClick={this.handleClick} >
+      <li className="list-group-item" onClick={this.handleClick} >
         #{channel}
       </li>
     );

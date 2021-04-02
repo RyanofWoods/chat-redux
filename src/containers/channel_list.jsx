@@ -6,13 +6,16 @@ import Channel from './channel';
 class ChannelList extends Component {
   render() {
     return (
-      <ul className="channel-list">
-        {
-          this.props.channels.map((channel) => {
-            return (<Channel key={channel} channel={channel} />);
-          })
-        }
-      </ul>
+      <div className="channel-container">
+        <div className="channel-container-header">Redux Group</div>
+        <div className="list-group">
+          {
+            this.props.channels.map((channel) => {
+              return (<Channel key={channel} channel={channel} />);
+            })
+          }
+        </div>
+      </div>
     );
   }
 }

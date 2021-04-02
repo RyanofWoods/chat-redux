@@ -6,13 +6,16 @@ import Message from '../components/message';
 class MessageList extends Component {
   render() {
     return (
-      <ul className="message-list">
-        {
-          this.props.messages.map((message) => {
-            return (<Message key={message} message={message} />);
-          })
-        }
-      </ul>
+      <div>
+        <div className="message-list-header">Channel: #general</div>
+        <ul className="message-list">
+          {
+            this.props.messages.map((message) => {
+              return (<Message key={message} message={message} />);
+            })
+          }
+        </ul>
+      </div>
     );
   }
 }
