@@ -2,17 +2,24 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { selectChannel } from '../actions/index';
+import { selectChannel, setMessages } from '../actions/index';
 
 class Channel extends Component {
   handleClick = () => {
-    this.props.selectChannel(this.props.channel);
+    if (this.props.channel !== this.props.selectedChannel) {
+      this.props.selectChannel(this.props.channel);
+      this.props.setMessages(this.props.channel);
+    }
   }
 
   render() {
     const { channel } = this.props;
+    let classes = 'list-group-item';
+    if (channel === this.props.selectedChannel) {
+      classes += ' selected';
+    }
     return (
-      <li className="list-group-item" onClick={this.handleClick} >
+      <li className={classes} onClick={this.handleClick} >
         #{channel}
       </li>
     );
@@ -20,10 +27,7 @@ class Channel extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    { selectChannel },
-    dispatch
-  );
+  return bindActionCreators({ selectChannel, setMessages }, dispatch);
 }
 
 function mapStateToProps(state) {

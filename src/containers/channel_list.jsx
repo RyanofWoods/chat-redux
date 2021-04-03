@@ -22,7 +22,8 @@ class ChannelList extends Component {
 
 function mapStateToProps(state) {
   return {
-    channels: state.channels
+    channels: state.channels,
+    selectedChannel: state.selectedChannel
   };
 }
 
