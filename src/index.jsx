@@ -12,9 +12,9 @@ import '../assets/stylesheets/application.scss';
 
 // reducers
 import messagesReducer from './reducers/messages_reducer';
-import channelsReducer from './reducers/channels_reducer.js';
 import selectedChannelReducer from './reducers/selected_channel_reducer';
-import currentUserReducer from './reducers/current_user_reducer';
+
+const baseReducer = (state = null) => state;
 
 const composeEnhancers = __REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const middlewares = composeEnhancers(applyMiddleware(logger, reduxPromise));
@@ -39,9 +39,9 @@ const initialState = {
 // State and reducers
 const reducers = combineReducers({
   messages: messagesReducer,
-  channels: channelsReducer,
   selectedChannel: selectedChannelReducer,
-  currentUser: currentUserReducer
+  channels: baseReducer,
+  currentUser: baseReducer
 });
 
 // render an instance of the component in the DOM
